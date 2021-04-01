@@ -3,14 +3,34 @@ import { useSelector, useDispatch } from 'react-redux'
 import fmt from 'indian-number-format'
 import { BsDash, BsPlus } from 'react-icons/bs'
 import { AiOutlineClose } from "react-icons/ai";
+import StripeCheckout from 'react-stripe-checkout'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AddProductAnimation from './addProductAnimation';
+toast.configure()
 
-const Cart = () => {
+const Cart = (props) => {
     const { products, totalQuantities, totalPrice } = useSelector(state => state.CartReducer)
     const dispatch = useDispatch()
+
+    const handleToken = async (token) => {
+        const product = { name: 'All Products', price: totalPrice }
+        const response = await axios.post("http://localhost:8080/checkout", {
+            product,
+            token,
+        })
+        const { status } = response.data
+        if (status === 'success') {
+            dispatch({ type: 'EMPTY' })
+            props.history.push('/')
+            toast.success("Payment Successful!!", { position: toast.POSITION.TOP_CENTER })
+        }
+    }
     return (
         <div className='cart'>
             <div className="container">
-                <h3>Your Cart</h3>
+                <h2>Your Cart</h2>
                 {products.length > 0 ? <>
                     <div className="row">
                         <div className="col-9">
@@ -89,12 +109,22 @@ const Cart = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <button type='button' className='checkout'>Proceed with payment</button>
+                                    <StripeCheckout
+                                        stripeKey="pk_test_51IagTlSJSMA09VcpPRBUp6xz1FRQqVCpvthH26T1bLsi7vpkKm5Ah6GIlKmffNtH4OdpaJfK2obNZFGSsbgg7vfS00Nx9bddr9"
+                                        token={handleToken}
+                                        billingAddress
+                                        shippingAddress
+                                        amount={totalPrice * 100}
+                                        currency='INR'
+                                        name='Gamer Hub'
+                                    >
+                                        <button type='button' className='checkout'>Proceed with payment</button>
+                                    </StripeCheckout>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </> : 'Your cart is empty'}
+                </> : <AddProductAnimation />}
             </div>
         </div>
     )

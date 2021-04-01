@@ -53,6 +53,12 @@ const CartReducer = (state = initState, action) => {
                 totalPrice: state.totalPrice - findPro.discountPrice * findPro.quantity,
                 totalQuantities: state.totalQuantities - findPro.quantity
             }
+        case 'EMPTY':
+            return {
+                products: [],
+                totalPrice: 0,
+                totalQuantities: 0,
+            }
         default:
             return state
     }

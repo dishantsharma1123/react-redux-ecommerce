@@ -304,6 +304,12 @@ a {
     text-align: center;
 }
 
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 765px) {
     .container {
         width: 100%;
