@@ -23,15 +23,17 @@ const Home = () => {
                                     {product.name}
                                 </div>
                                 <div className="row">
-                                    <div className="col-6">
-                                        <div className="product__price">
-                                            <span className="actualPrice">₹{formatAmount(product.price)}</span>
-                                            <span className="discount">{product.discount}%</span>
+                                    <div className="price-row">
+                                        <div className="col-6">
+                                            <div className="product__price">
+                                                <span className="actualPrice">₹{formatAmount(product.price)}</span>
+                                                <span className="discount">{product.discount}%</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="col-6">
-                                        <div className="product__discount__price">
-                                            ₹{formatAmount(Math.round(product.discountPrice))}
+                                        <div className="col-6">
+                                            <div className="product__discount__price">
+                                                ₹{formatAmount(Math.round(product.discountPrice))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
