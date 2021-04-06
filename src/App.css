@@ -310,6 +310,13 @@ a {
     align-items: center;
 }
 
+.price-row {
+    display: flex;
+    wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
 @media (max-width: 765px) {
     .container {
         width: 100%;
@@ -436,7 +443,17 @@ a {
     }
     .product__img {
     width: 100%;
-    height: 250px;
+    height: 325px;
     overflow: hidden;
+    }
+    .header {
+    background-image: url('./images/header-600.jpg');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    }
+    .discount {
+        font-size: 11px;
     }
 }

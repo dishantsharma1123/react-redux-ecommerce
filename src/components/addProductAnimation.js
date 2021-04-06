@@ -12,7 +12,7 @@ const AddProductAnimation = () => {
     return (
         <div className='animation-container'>
             <div id='add-product' style={{ width: 400, height: 400 }} />
-            <h2>Ooopsss... you don't have any product in the cart!</h2>
+            <h2 style={{ fontSize: '1.2rem' }}>Ooopsss... you don't have any product in the cart!</h2>
         </div>
     )
 }
