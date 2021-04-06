@@ -305,9 +305,21 @@ a {
 }
 
 .animation-container {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: 'flex-start';
     align-items: center;
+    padding-top: 3rem;
+}
+.empty-cart-animation { 
+    width: 400; 
+    height: 400; 
+}
+
+.empty-cart-text { 
+    font-size: 1.5rem; 
+    fontWeight: 500; 
 }
 
 .price-row {
@@ -455,5 +467,109 @@ a {
     }
     .discount {
         font-size: 11px;
+    }
+}
+
+@media (max-width: 250px) {
+    .header {
+    background-image: url('./images/header-250.jpg');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    }
+    .nav__left img {
+        width: 80px;
+    }
+    .container {
+        width: 100%;
+    }
+    .product__img {
+        width: 100%;
+        height: 170px;
+        overflow: hidden;
+    }
+    .product__name {
+        font-size: 0.8rem;
+    }
+    .actualPrice {
+        font-size: .8rem;
+    }
+    .product__discount__price {
+        font-size: .8rem;
+    }
+    .discount {
+        font-size: .3rem;
+    }
+    .price-row {
+        display: flex;
+        wrap: nowrap;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+    .cart-icon {
+        font-size: 20px;
+    }
+    .basket span {
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        right: -12px;
+        top: -8px;
+    }
+    .details__name {
+        font-size: 14px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .details__image {
+        width: 80%;
+        height: 70vh;
+        margin: 0 auto;
+    }
+    .details__image img {
+        width: 100%;
+        height: 100%;
+    }
+    .details__prices {
+        text-align: center;
+    }
+    .dec,
+    .inc,
+    .quantity {
+        width: 30px;
+        height: 30px;
+        border: 1px solid silver;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .details__actual {
+        font-size: 1rem;
+    }
+    .details__discount {
+        font-size: 1rem;
+    }
+    .btn-default {
+        font-size: 13px;
+    }
+    .details__p {
+        margin-top: 15px;
+        font-size: 13px;
+    }
+
+    .details__p h4 {
+        font-size: 15px;
+    }
+    .cart h2 {
+        text-align: center;
+    }
+    .checkout {
+        font-size: .7rem;
+    }
+    .empty-cart-text { 
+        font-size: .7rem; 
+        fontWeight: 500; 
     }
 }

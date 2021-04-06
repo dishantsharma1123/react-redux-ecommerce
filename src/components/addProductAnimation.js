@@ -11,8 +11,8 @@ const AddProductAnimation = () => {
     }, []);
     return (
         <div className='animation-container'>
-            <div id='add-product' style={{ width: 400, height: 400 }} />
-            <h2 style={{ fontSize: '1.2rem' }}>Ooopsss... you don't have any product in the cart!</h2>
+            <div id='add-product' className='empty-cart-animation' />
+            <h2 className='empty-cart-text'>add products to your cart</h2>
         </div>
     )
 }
