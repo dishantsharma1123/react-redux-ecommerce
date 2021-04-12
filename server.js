@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const stripe = require('stripe')('sk_test_51IagTlSJSMA09VcpoC7yYd25BTLUDctsodVhGDGFEWsEcqsRHK8m9TWaUBImLmm7QjG6qN83wM7CX0Ryf8KMiuKh00CpiFNQ0S')
 const { v4: uuidv4 } = require('uuid')
-const PORT = process.env.PORT || 8080;
 
 const app = express()
 app.use(cors())
@@ -49,7 +48,7 @@ app.post('/checkout', async (req, res) => {
     res.json({ status })
 })
 
-app.listen(PORT, () => {
+app.listen(8080, () => {
     console.log('App is successfully ruuning on port 8080')
 })
 
