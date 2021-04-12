@@ -1,3 +1,10 @@
+
+
+Live version of this site is available at: https://react-redux-ecommerce-11.herokuapp.com/
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
