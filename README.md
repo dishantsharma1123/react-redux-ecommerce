@@ -1,6 +1,6 @@
 
 
-Live version of this site is available at: https://react-redux-ecommerce-11.herokuapp.com/
+Live version of this site is available at: https://ecommerce-gamer-hub.herokuapp.com/
 
 
 
